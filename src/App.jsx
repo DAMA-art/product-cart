@@ -43,7 +43,7 @@ const ProductCard = ({ product, quantity, onAddToCart, onRemoveFromCart, onQuant
             onClick={onRemoveFromCart}
             disabled={quantity === 0}
           >
-            −
+            -
           </button>
           
           <span className="quantity">{quantity}</span>
@@ -113,7 +113,7 @@ const Cart = ({ cart, products, onUpdateQuantity, onRemoveItem, onClose, onCheck
       <div className="cart-modal">
         <div className="cart-header">
           <h2>Корзина покупок</h2>
-          <button className="close-btn" onClick={onClose}>×</button>
+          <button className="close-btn" onClick={onClose}>*</button>
         </div>
         
         <div className="cart-items">
@@ -128,7 +128,7 @@ const Cart = ({ cart, products, onUpdateQuantity, onRemoveItem, onClose, onCheck
                 <img src={product.image} alt={product.name} className="cart-item-image" />
                 <div className="cart-item-info">
                   <h4>{product.name}</h4>
-                  <p>{product.price} Руб./кг × {quantity} шт.</p>
+                  <p>{product.price} Руб./кг * {quantity} шт.</p>
                 </div>
                 <div className="cart-item-controls">
                   <input
@@ -143,7 +143,7 @@ const Cart = ({ cart, products, onUpdateQuantity, onRemoveItem, onClose, onCheck
                     className="remove-item-btn"
                     onClick={() => onRemoveItem(product.id)}
                   >
-                    ✕
+                    *
                   </button>
                 </div>
               </div>
@@ -178,36 +178,36 @@ const App = () => {
   const [showCart, setShowCart] = useState(false);
 
   const products = [
-    { id: 1, name: 'Огурцы', price: 89, weight: 500, category: 'Овощи', image: 'image/1.jpg' },
-    { id: 2, name: 'Помидоры', price: 149, weight: 500, category: 'Овощи', image: 'image/2.jpg' },
-    { id: 3, name: 'Болгарский перец', price: 199, weight: 500, category: 'Овощи', image: 'image/3.jpg' },
+    { id: 1, name: 'Огурцы', price: 59, weight: 1000, category: 'Овощи', image: 'image/1.jpg' },
+    { id: 2, name: 'Помидоры', price: 119, weight: 1000, category: 'Овощи', image: 'image/2.jpg' },
+    { id: 3, name: 'Болгарский перец', price: 149, weight: 1000, category: 'Овощи', image: 'image/3.jpg' },
     { id: 4, name: 'Репчатый лук', price: 39, weight: 1000, category: 'Овощи', image: 'image/4.jpg' },
-    { id: 5, name: 'Чеснок', price: 259, weight: 200, category: 'Овощи', image: 'image/5.jpg' },
+    { id: 5, name: 'Чеснок', price: 150, weight: 1000, category: 'Овощи', image: 'image/5.jpg' },
     { id: 6, name: 'Морковь', price: 49, weight: 1000, category: 'Овощи', image: 'image/6.jpg' },
     { id: 7, name: 'Картофель', price: 35, weight: 1000, category: 'Овощи', image: 'image/7.jpg' },
     { id: 8, name: 'Капуста', price: 29, weight: 1000, category: 'Овощи', image: 'image/8.jpg' },
-    { id: 9, name: 'Свекла', price: 45, weight: 500, category: 'Овощи', image: 'image/9.jpg' },
-    { id: 10, name: 'Батат', price: 129, weight: 500, category: 'Овощи', image: 'image/10.jpg' },
-    { id: 11, name: 'Редька', price: 79, weight: 500, category: 'Овощи', image: 'image/11.jpg' },
-    { id: 12, name: 'Редис', price: 99, weight: 300, category: 'Овощи', image: 'image/12.jpg' },
-    { id: 13, name: 'Кабачок', price: 89, weight: 500, category: 'Овощи', image: 'image/13.jpg' },
+    { id: 9, name: 'Свекла', price: 45, weight: 1000, category: 'Овощи', image: 'image/9.jpg' },
+    { id: 10, name: 'Батат', price: 125, weight: 1000, category: 'Овощи', image: 'image/10.jpg' },
+    { id: 11, name: 'Редька', price: 70, weight: 1000, category: 'Овощи', image: 'image/11.jpg' },
+    { id: 12, name: 'Редис', price: 100, weight: 1000, category: 'Овощи', image: 'image/12.jpg' },
+    { id: 13, name: 'Кабачок', price: 82, weight: 1000, category: 'Овощи', image: 'image/13.jpg' },
     { id: 14, name: 'Тыква', price: 69, weight: 1000, category: 'Овощи', image: 'image/14.jpg' },
-    { id: 15, name: 'Баклажан', price: 179, weight: 500, category: 'Овощи', image: 'image/15.jpg' },
+    { id: 15, name: 'Баклажан', price: 174, weight: 1000, category: 'Овощи', image: 'image/15.jpg' },
 
-    { id: 16, name: 'Яблоки', price: 99, weight: 1000, category: 'Фрукты', image: 'image/16.jpg' },
-    { id: 17, name: 'Груши', price: 159, weight: 1000, category: 'Фрукты', image: 'image/17.jpg' },
-    { id: 18, name: 'Манго', price: 349, weight: 500, category: 'Фрукты', image: 'image/18.jpg' },
-    { id: 19, name: 'Персики', price: 219, weight: 500, category: 'Фрукты', image: 'image/19.jpg' },
-    { id: 20, name: 'Ананас', price: 399, weight: 1000, category: 'Фрукты', image: 'image/20.jpg' },
-    { id: 21, name: 'Апельсины', price: 129, weight: 1000, category: 'Фрукты', image: 'image/21.jpg' },
-    { id: 22, name: 'Лимоны', price: 179, weight: 500, category: 'Фрукты', image: 'image/22.jpg' },
-    { id: 23, name: 'Киви', price: 279, weight: 500, category: 'Фрукты', image: 'image/23.jpg' },
-    { id: 24, name: 'Мандарины', price: 149, weight: 1000, category: 'Фрукты', image: 'image/24.jpg' },
-    { id: 25, name: 'Бананы', price: 79, weight: 1000, category: 'Фрукты', image: 'image/25.jpg' },
+    { id: 16, name: 'Яблоки', price: 80, weight: 1000, category: 'Фрукты', image: 'image/16.jpg' },
+    { id: 17, name: 'Груши', price: 115, weight: 1000, category: 'Фрукты', image: 'image/17.jpg' },
+    { id: 18, name: 'Манго', price: 390, weight: 500, category: 'Фрукты', image: 'image/18.jpg' },
+    { id: 19, name: 'Персики', price: 210, weight: 500, category: 'Фрукты', image: 'image/19.jpg' },
+    { id: 20, name: 'Ананас', price: 340, weight: 1000, category: 'Фрукты', image: 'image/20.jpg' },
+    { id: 21, name: 'Апельсины', price: 126, weight: 1000, category: 'Фрукты', image: 'image/21.jpg' },
+    { id: 22, name: 'Лимоны', price: 119, weight: 500, category: 'Фрукты', image: 'image/22.jpg' },
+    { id: 23, name: 'Киви', price: 202, weight: 500, category: 'Фрукты', image: 'image/23.jpg' },
+    { id: 24, name: 'Мандарины', price: 145, weight: 1000, category: 'Фрукты', image: 'image/24.jpg' },
+    { id: 25, name: 'Бананы', price: 74, weight: 1000, category: 'Фрукты', image: 'image/25.jpg' },
     { id: 26, name: 'Слива', price: 189, weight: 500, category: 'Фрукты', image: 'image/26.jpg' },
-    { id: 27, name: 'Гранат', price: 399, weight: 500, category: 'Фрукты', image: 'image/27.jpg' },
-    { id: 28, name: 'Абрикосы', price: 199, weight: 500, category: 'Фрукты', image: 'image/28.jpg' },
-    { id: 29, name: 'Грейпфрут', price: 169, weight: 500, category: 'Фрукты', image: 'image/29.jpg' }
+    { id: 27, name: 'Гранат', price: 350, weight: 500, category: 'Фрукты', image: 'image/27.jpg' },
+    { id: 28, name: 'Абрикосы', price: 190, weight: 500, category: 'Фрукты', image: 'image/28.jpg' },
+    { id: 29, name: 'Грейпфрут', price: 160, weight: 500, category: 'Фрукты', image: 'image/29.jpg' }
   ];
 
   const filteredProducts = currentCategory === 'Все товары' 
