@@ -178,12 +178,12 @@ const App = () => {
   const [showCart, setShowCart] = useState(false);
 
   const products = [
-    { id: 1, name: 'Огурцы', price: 59, weight: 1000, category: 'Овощи', image: 'image/1.jpg' },
-    { id: 2, name: 'Помидоры', price: 119, weight: 1000, category: 'Овощи', image: 'image/2.jpg' },
-    { id: 3, name: 'Болгарский перец', price: 149, weight: 1000, category: 'Овощи', image: 'image/3.jpg' },
+    { id: 1, name: 'Огурцы', price: 60, weight: 1000, category: 'Овощи', image: 'image/1.jpg' },
+    { id: 2, name: 'Помидоры', price: 110, weight: 1000, category: 'Овощи', image: 'image/2.jpg' },
+    { id: 3, name: 'Болгарский перец', price: 147, weight: 1000, category: 'Овощи', image: 'image/3.jpg' },
     { id: 4, name: 'Репчатый лук', price: 39, weight: 1000, category: 'Овощи', image: 'image/4.jpg' },
     { id: 5, name: 'Чеснок', price: 150, weight: 1000, category: 'Овощи', image: 'image/5.jpg' },
-    { id: 6, name: 'Морковь', price: 49, weight: 1000, category: 'Овощи', image: 'image/6.jpg' },
+    { id: 6, name: 'Морковь', price: 48, weight: 1000, category: 'Овощи', image: 'image/6.jpg' },
     { id: 7, name: 'Картофель', price: 35, weight: 1000, category: 'Овощи', image: 'image/7.jpg' },
     { id: 8, name: 'Капуста', price: 29, weight: 1000, category: 'Овощи', image: 'image/8.jpg' },
     { id: 9, name: 'Свекла', price: 45, weight: 1000, category: 'Овощи', image: 'image/9.jpg' },
